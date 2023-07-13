@@ -1,0 +1,1 @@
+This is a mock file, please remove it when you have a Page component to add to the folder

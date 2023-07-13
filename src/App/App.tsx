@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Button from "@mui/material/Button";
+import { Typography } from "@mui/material";
 
 export default function App() {
   useEffect(() => {
@@ -9,10 +11,16 @@ export default function App() {
 
   return (
     <>
-      <h1>Pitchers</h1>
+      <Typography variant="h1">Pitchers</Typography>
+      <Typography variant="h1">click</Typography>
+      <Typography variant="body1">click</Typography>
       <button type="button" onClick={() => setCount(count + 1)}>
         click me
       </button>
+      <Button variant="contained">Hello World</Button>
+      <Button variant="contained" color="secondary">
+        Hello World
+      </Button>
     </>
   );
 }

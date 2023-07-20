@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
+import CardTemplate from '../Shared/Cards/CardTemplate.tsx';
+
 export default function App() {
   useEffect(() => {
     console.log('test');
@@ -21,6 +23,7 @@ export default function App() {
       <Button variant="contained" color="secondary">
         Hello World
       </Button>
+      <CardTemplate />
     </>
   );
 }

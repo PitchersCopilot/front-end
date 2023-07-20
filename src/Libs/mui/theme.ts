@@ -11,6 +11,11 @@ const customTheme = createTheme({
     secondary: {
       main: '#95A4FC',
     },
+    text: {
+      primary: '#fff',
+      secondary: '#95A4FC',
+      disabled: '#ADA7A7',
+    },
   },
 });
 

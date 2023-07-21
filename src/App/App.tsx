@@ -13,7 +13,6 @@ export default function App() {
     <>
       <Typography variant="h1">Pitchers</Typography>
       <Typography variant="h1">click</Typography>
-      <Typography variant="body1">click</Typography>
       <button type="button" onClick={() => setCount(count + 1)}>
         click me
       </button>

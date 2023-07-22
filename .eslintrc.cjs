@@ -3,7 +3,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: ['prettier', 'airbnb', 'airbnb/hooks'],
+  extends: ['airbnb', 'airbnb/hooks', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',

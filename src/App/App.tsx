@@ -1,25 +1,15 @@
-import { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
+import { Suspense } from 'react';
+import Router from '../Router/router.config.tsx';
+import Loading from '../Shared/loading.tsx';
 
 export default function App() {
-  useEffect(() => {
-    console.log('test');
-  }, []);
 
-  const [count, setCount] = useState<number>(0);
+  // Here will be all the logic for the entry point of the application
+  // ie: Authentication logic and protected routes
 
   return (
-    <>
-      <Typography variant="h1">Pitchers</Typography>
-      <Typography variant="h1">click</Typography>
-      <button type="button" onClick={() => setCount(count + 1)}>
-        click me
-      </button>
-      <Button variant="contained">Hello World</Button>
-      <Button variant="contained" color="secondary">
-        Hello World
-      </Button>
-    </>
+    <Suspense fallback={<Loading />}>
+      <Router />
+    </Suspense>
   );
 }

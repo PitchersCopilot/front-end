@@ -5,8 +5,9 @@ const customTheme = createTheme({
     fontFamily: ['Inter Variable', 'sans-serif'].join(','),
   },
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#1C1C1C',
+      main: '#ffffff',
     },
     secondary: {
       main: '#95A4FC',

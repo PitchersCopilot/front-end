@@ -7,8 +7,8 @@ const Property = lazy(() => import('../Pages/property/property.tsx'));
 
 const CustomRoutes: RouteObject[] = createRoutesFromElements(
   <>
-    <Route path="/login" element={<Login />} />
     <Route path="/" element={<Dashboard />} />
+    <Route path="/login" element={<Login />} />
     <Route path="/property/:propertyId" element={<Property />} />
   </>,
 );

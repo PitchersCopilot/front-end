@@ -1,3 +1,7 @@
+import { useParams } from 'react-router-dom';
+
 export default function Property() {
-  return <h1>Property Page</h1>;
+  const { propertyId } = useParams<string>();
+
+  return <h1>Property Page: {propertyId}</h1>;
 }

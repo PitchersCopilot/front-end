@@ -1,9 +1,10 @@
-import { SvgSize, SvgProps } from './types.ts';
+import { SvgSize, SvgProps } from './logo.types.ts';
 
 export const LogoSizes: SvgSize = {
   small: 100,
   medium: 150,
   large: 200,
+  icon: 23,
 };
 
 export default function Logo({ size }: SvgProps) {

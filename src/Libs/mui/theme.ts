@@ -13,6 +13,15 @@ const customTheme = createTheme({
       main: '#95A4FC',
     },
   },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '15px',
+        },
+      },
+    },
+  },
 });
 
 export default customTheme;

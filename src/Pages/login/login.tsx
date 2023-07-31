@@ -28,7 +28,7 @@ export default function Login() {
   };
 
   return (
-    <Layout>
+    <Layout layoutdirection="row">
       <StyledForm>
         <CardHeader avatar={<Logo size="medium" />} />
         <CardContent>

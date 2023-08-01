@@ -1,6 +1,8 @@
 import StyledLayout from './layout.styles.ts';
-import { ParentComponent } from '../../vite-env';
+import { LayoutProps } from './layout.types.ts';
 
-export default function Layout({ children }: ParentComponent) {
-  return <StyledLayout container>{children}</StyledLayout>;
+export default function Layout({ children, layoutdirection }: LayoutProps) {
+  return (
+    <StyledLayout layoutdirection={layoutdirection}>{children}</StyledLayout>
+  );
 }

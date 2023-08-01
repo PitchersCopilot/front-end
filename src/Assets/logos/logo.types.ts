@@ -1,4 +1,4 @@
-export type SvgSizes = 'small' | 'medium' | 'large';
+export type SvgSizes = 'small' | 'medium' | 'large' | 'icon';
 
 export type SvgProps = {
   size: SvgSizes;

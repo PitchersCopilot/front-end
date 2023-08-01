@@ -2,6 +2,8 @@
 import { styled, Card } from '@mui/material';
 
 export const StyledForm = styled(Card)({
+  flex: '1',
+
   borderRadius: '20px',
   display: 'flex',
   flexFlow: 'column nowrap',

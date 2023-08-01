@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   };
 
   if (command !== 'serve') {
-    config.base = 'front-end/';
+    config.base = '/front-end/';
   }
 
   return config;

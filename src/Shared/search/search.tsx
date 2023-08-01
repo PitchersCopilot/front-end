@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext } from 'react';
+import { useContext, ChangeEvent } from 'react';
 import {
   IconButton,
   Card,
@@ -11,13 +11,13 @@ import {
 import CancelIcon from '@mui/icons-material/Cancel';
 import SendIcon from '@mui/icons-material/Send';
 import Logo from '../../Assets/logos/logo.tsx';
-import { SearchContext, TSearchContext } from '../../Contexts/search/index.ts';
 import { SearchComponentProps } from './index.ts';
+import { SearchContext } from '../../Contexts/search/index.ts';
 
 export default function SearchComponent({
   handleSearch,
 }: SearchComponentProps) {
-  const { setSearchContext } = useContext<TSearchContext>(SearchContext);
+  const { setSearchContext } = useContext(SearchContext);
 
   const inputChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,

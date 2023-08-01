@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ParentComponent } from '../../vite-env';
-import { TSearchContext } from './search-context.types.ts';
-import { DefaultSearchState, SearchContext } from './search-context.context.ts';
+import { ISearch, TSearchContext, SearchContext } from './index.ts';
 
 export default function SearchContextComponent({ children }: ParentComponent) {
+  const DefaultSearchState: ISearch = { input: '' };
   const [searchContext, setSearchContext] =
-    useState<TSearchContext>(DefaultSearchState);
+    useState<ISearch>(DefaultSearchState);
 
-  // TODO: Wrapp context inside a use memoo!
+  const cachedSearchContext = useMemo<TSearchContext>(
+    () => ({ searchContext, setSearchContext }),
+    [searchContext],
+  );
 
   return (
-    <SearchContext.Provider value={{ searchContext, setSearchContext }}>
+    <SearchContext.Provider value={cachedSearchContext}>
       {children}
     </SearchContext.Provider>
   );

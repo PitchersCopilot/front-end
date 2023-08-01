@@ -1,9 +1,12 @@
 import { createContext } from 'react';
-import { TSearchContext, ISearch } from './search-context.types.ts';
+import { ISearch, TSearchContext } from './index.ts';
 
-export const DefaultSearchState: TSearchContext = {
+export const DefaultSearchContext: TSearchContext = {
   searchContext: { input: '' } as ISearch,
-  setSearchContext: () => {},
+  setSearchContext(): void {
+    throw new Error('Function not implemented.');
+  },
 };
 
-export const SearchContext = createContext<TSearchContext>(DefaultSearchState);
+export const SearchContext =
+  createContext<TSearchContext>(DefaultSearchContext);

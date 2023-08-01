@@ -1,11 +1,11 @@
-import { useContext } from 'react';
 import { Card } from '@mui/material';
+import { useContext } from 'react';
 import Layout from '../../Shared/layout/layout.tsx';
 import SearchComponent from '../../Shared/search/search.tsx';
-import { SearchContext, TSearchContext } from '../../Contexts/search/index.ts';
+import { SearchContext } from '../../Contexts/search/index.ts';
 
 export default function Dashboard() {
-  const { searchContext } = useContext<TSearchContext>(SearchContext);
+  const { searchContext } = useContext(SearchContext);
 
   const handleSearch = () => {
     console.log(searchContext.input);

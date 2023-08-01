@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { ChangeEvent, useContext } from 'react';
 import {
   IconButton,
   Card,
@@ -10,16 +10,19 @@ import {
 } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SendIcon from '@mui/icons-material/Send';
+import Logo from '../../Assets/logos/logo.tsx';
+import { SearchContext, TSearchContext } from '../../Contexts/search/index.ts';
+import { SearchComponentProps } from './index.ts';
 
-export type SearchContext = {
-  searchInput: string;
-};
+export default function SearchComponent({
+  handleSearch,
+}: SearchComponentProps) {
+  const { setSearchContext } = useContext<TSearchContext>(SearchContext);
 
-export default function SearchComponent() {
-  // const searhContext = useContext<unknown>();
-
-  const handleSearch = (event?: MouseEvent<HTMLButtonElement>) => {
-    console.log(event);
+  const inputChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setSearchContext({ input: event.target.value });
   };
 
   return (
@@ -40,9 +43,11 @@ export default function SearchComponent() {
       <CardContent>
         <TextField
           fullWidth
+          autoFocus
           variant="filled"
           color="secondary"
           onKeyDown={(e) => (e.key === 'Enter' ? handleSearch() : undefined)}
+          onChange={inputChange}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

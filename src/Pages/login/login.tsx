@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../../Shared/layout/layout.tsx';
 import Logo from '../../Assets/logos/logo.tsx';
 import { LoginData } from './login.types.ts';
-import { StyledForm } from './login.components.tsx';
+import { StyledForm } from './login.styled.tsx';
 
 export default function Login() {
   const [loginData, setLoginData] = useState<Partial<LoginData>>();
@@ -33,7 +33,7 @@ export default function Login() {
         <CardHeader avatar={<Logo size="medium" />} />
         <CardContent>
           <TextField
-            variant="standard"
+            variant="filled"
             id="user"
             type="email"
             label="Email"

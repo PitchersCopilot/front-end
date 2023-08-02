@@ -1,3 +1,7 @@
 /// <reference types="vite/client" />
 
-// TODO : Create general type for component props
+import { ReactNode } from 'react';
+
+type ParentComponent = {
+  children: ReactNode;
+};

@@ -5,8 +5,10 @@ const customTheme = createTheme({
     fontFamily: ['Inter Variable', 'sans-serif'].join(','),
   },
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#1C1C1C',
+      main: '#ffffff',
+      light: '#232323',
     },
     secondary: {
       main: '#95A4FC',
@@ -15,6 +17,15 @@ const customTheme = createTheme({
       primary: '#fff',
       secondary: '#95A4FC',
       disabled: '#ADA7A7',
+    },
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '15px',
+        },
+      },
     },
   },
 });

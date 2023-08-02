@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 
 interface TextLabelProps {
   Icon?: React.ElementType;
-  label: string | undefined;
+  label: string | undefined | number;
 }
 
 function TextLabel({ Icon, label }: TextLabelProps) {

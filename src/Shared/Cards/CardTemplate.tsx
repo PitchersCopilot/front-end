@@ -12,8 +12,9 @@ import {
   Bathtub as BathtubIcon,
   SquareFoot as SquareFootIcon,
 } from '@mui/icons-material';
-import TextLabel from './Components/TextLabel';
+import TextLabel from './TextLabel.tsx';
 
+//! OnClick, image, location,address, shortDescription, price, amenities[], yearAgo string
 function CardTemplate() {
   const cardStyles = {
     maxWidth: 1440,
@@ -44,7 +45,6 @@ function CardTemplate() {
       >
         <Box sx={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <TextLabel label="Colombia" Icon={PlaceIcon} />
-          <TextLabel label="Usaquen" />
         </Box>
         <Typography
           gutterBottom

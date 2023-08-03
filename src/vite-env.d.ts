@@ -1,7 +1,10 @@
 /// <reference types="vite/client" />
 
-import { ReactNode } from 'react';
-
 type ParentComponent = {
-  children: ReactNode;
+  // eslint-disable-next-line no-undef
+  children: React.ReactNode;
+};
+
+type SearchBody = {
+  query: string;
 };

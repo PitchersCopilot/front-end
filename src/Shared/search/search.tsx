@@ -29,11 +29,7 @@ export default function SearchComponent({
     <Card>
       <CardHeader
         avatar={<Logo size="icon" />}
-        subheader={
-          <Typography variant="body1" color="secondary">
-            Companion
-          </Typography>
-        }
+        // subheader={}
         action={
           <IconButton>
             <CancelIcon color="action" fontSize="small" />

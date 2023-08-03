@@ -4,6 +4,11 @@ export type SvgProps = {
   size: SvgSizes;
 };
 
+export type Area = {
+  width: number;
+  height: number;
+};
+
 export type SvgSize = {
-  [k in SvgSizes]: number;
+  [k in SvgSizes]: Area;
 };

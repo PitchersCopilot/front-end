@@ -19,7 +19,7 @@ type Property = {
   image: string;
   location: string;
   address: string;
-  description: string;
+  descriptor: string;
   price: number;
   amenities: Amenity;
   yearsAgo: string;

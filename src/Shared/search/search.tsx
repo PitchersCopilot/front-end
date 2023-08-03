@@ -26,16 +26,16 @@ export default function SearchComponent({
   const inputChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setSearchContext({ input: event.target.value });
+    setSearchContext({ ...searchContext, input: event.target.value });
   };
 
-  const validateInput = () => {
+  const validateInput = async () => {
     if (!searchContext.input || searchContext.input.length === 0) {
-      setSearchContext({ input: '', error: "Search could't be empty" });
+      setSearchContext({ ...searchContext, error: "Search could't be empty" });
       return;
     }
 
-    handleSearch();
+    await handleSearch();
   };
 
   const clearInput = () => {

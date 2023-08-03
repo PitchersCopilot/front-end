@@ -7,10 +7,10 @@ import {
   TextField,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Layout from '../../Shared/layout/layout.tsx';
 import Logo from '../../Assets/logos/logo.tsx';
 import { LoginData } from './login.types.ts';
 import { StyledForm } from './login.styled.tsx';
+import Layout from '../../Shared/layout/layout.styles.ts';
 
 export default function Login() {
   const [loginData, setLoginData] = useState<Partial<LoginData>>();
@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <Layout layoutdirection="row">
       <StyledForm>
-        <CardHeader avatar={<Logo size="medium" />} />
+        <CardHeader avatar={<Logo size="large" />} />
         <CardContent>
           <TextField
             variant="filled"

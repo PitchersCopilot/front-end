@@ -1,5 +1,7 @@
 export interface ISearch {
   input: string;
+  loading: boolean;
+  error?: string;
 }
 
 export type TSearchContext = {

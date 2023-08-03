@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import { ParentComponent } from '../../vite-env';
 import { ISearch, TSearchContext, SearchContext } from './index.ts';
 
 export default function SearchContextComponent({ children }: ParentComponent) {

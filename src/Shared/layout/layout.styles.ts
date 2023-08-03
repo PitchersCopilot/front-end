@@ -9,6 +9,7 @@ const StyledLayout = styled(Container)((props: LayoutStyleProps) => ({
   display: 'flex',
   flexFlow: `${props.layoutdirection} nowrap`,
   rowGap: '2rem',
+  columnGap: '1rem',
 
   alignItems: 'space-evenly',
   justifyContent: 'center',

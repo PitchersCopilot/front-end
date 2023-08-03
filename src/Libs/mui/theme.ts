@@ -8,9 +8,15 @@ const customTheme = createTheme({
     mode: 'dark',
     primary: {
       main: '#ffffff',
+      light: '#232323',
     },
     secondary: {
       main: '#95A4FC',
+    },
+    text: {
+      primary: '#fff',
+      secondary: '#95A4FC',
+      disabled: '#ADA7A7',
     },
   },
   components: {

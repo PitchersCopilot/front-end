@@ -1,7 +1,26 @@
 /// <reference types="vite/client" />
 
-import { ReactNode } from 'react';
-
 type ParentComponent = {
-  children: ReactNode;
+  children: React.ReactNode;
+};
+
+type SearchBody = {
+  query: string;
+};
+
+type Amenity = {
+  bathrooms: number | string;
+  bedrooms: string;
+  meters: number | string;
+};
+
+type Property = {
+  id: number | string;
+  image: string;
+  location: string;
+  address: string;
+  description: string;
+  price: number;
+  amenities: Amenity;
+  yearsAgo: string;
 };

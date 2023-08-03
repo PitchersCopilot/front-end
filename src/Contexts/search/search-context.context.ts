@@ -8,5 +8,11 @@ export const DefaultSearchContext: TSearchContext = {
   },
 };
 
+export const DefaultSearchValues: ISearch = {
+  input: '',
+  error: undefined,
+  loading: false,
+};
+
 export const SearchContext =
   createContext<TSearchContext>(DefaultSearchContext);

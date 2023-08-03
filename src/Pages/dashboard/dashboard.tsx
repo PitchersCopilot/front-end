@@ -1,19 +1,14 @@
-import { useContext } from 'react';
-<<<<<<< Updated upstream
+import { useContext, useState } from 'react';
 import { Stack, Card } from '@mui/material';
-import Layout from '../../Shared/layout/layout.tsx';
-import SearchComponent from '../../Shared/search/search.tsx';
-import { SearchContext } from '../../Contexts/search/index.ts';
-import CardTemplate from '../../Shared/cards/CardTemplate.tsx';
-=======
-import SearchComponent from '../../Shared/search/search.tsx';
-import { SearchContext } from '../../Contexts/search/index.ts';
 import Layout from '../../Shared/layout/layout.styles.ts';
+import SearchComponent from '../../Shared/search/search.tsx';
+import CardTemplate from '../../Shared/cards/CardTemplate.tsx';
+import { SearchContext } from '../../Contexts/search/index.ts';
 import { API } from '../../Network/api.ts';
->>>>>>> Stashed changes
 
 export default function Dashboard() {
   const { searchContext } = useContext(SearchContext);
+  const [properties, setProperties] = useState<Array<Property>>();
 
   const handleSearch = async () => {
     const body: SearchBody = { query: searchContext.input };

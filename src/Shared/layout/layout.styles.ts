@@ -8,12 +8,7 @@ const Layout = styled(Container)((props: LayoutStyleProps) => ({
 
   display: 'flex',
   flexFlow: `${props.layoutdirection} nowrap`,
-<<<<<<< Updated upstream
-  rowGap: '2rem',
-  columnGap: '1rem',
-=======
   gap: '2rem',
->>>>>>> Stashed changes
 
   alignItems: 'space-evenly',
   justifyContent: 'center',

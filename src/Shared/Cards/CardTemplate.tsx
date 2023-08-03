@@ -22,7 +22,7 @@ function CardTemplate({
   image,
   location,
   address,
-  description,
+  descriptor,
   price,
   amenities,
   yearsAgo,
@@ -41,7 +41,7 @@ function CardTemplate({
             {address}
           </Typography>
           <Typography gutterBottom variant="body1" color="text.disabled">
-            {description}
+            {descriptor}
           </Typography>
           <Box sx={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <TextLabel label={meters} Icon={SquareFootIcon} />

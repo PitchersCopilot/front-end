@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SendIcon from '@mui/icons-material/Send';
-import Logo from '../../Assets/logos/logo.tsx';
+import Logo from '../../Assets/pitchers.logo.tsx';
 import { SearchComponentProps } from './index.ts';
 import {
   SearchContext,
@@ -26,7 +26,11 @@ export default function SearchComponent({
   const inputChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setSearchContext({ ...searchContext, input: event.target.value });
+    setSearchContext({
+      ...searchContext,
+      error: undefined,
+      input: event.target.value,
+    });
   };
 
   const validateInput = async () => {

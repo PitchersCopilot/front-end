@@ -16,7 +16,6 @@ import TextLabel from './TextLabel.tsx';
 import { CardTemplateProps } from './cards.types.ts';
 import { StyledCard } from './card.styled.ts';
 
-//! OnClick, image, location,address, shortDescription, price, amenities[], yearAgo string
 function CardTemplate({
   onClick,
   image,
@@ -30,8 +29,8 @@ function CardTemplate({
   const { bathrooms, bedrooms, meters } = amenities;
 
   return (
-    <CardActionArea>
-      <StyledCard onClick={onClick} sx={{ backgroundColor: 'primary.light' }}>
+    <CardActionArea onClick={onClick}>
+      <StyledCard sx={{ backgroundColor: 'primary.light' }}>
         <CardMedia component="img" image={image} sx={{ maxWidth: 150 }} />
         <CardContent>
           <Box sx={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>

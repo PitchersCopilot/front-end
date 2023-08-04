@@ -4,10 +4,10 @@ import { LayoutStyleProps } from './layout.types.ts';
 const Layout = styled(Container)((props: LayoutStyleProps) => ({
   padding: '2rem 0rem',
 
-  height: '100vh',
+  height: `${props.height || '100vh'}`,
 
   display: 'flex',
-  flexFlow: `${props.layoutdirection} nowrap`,
+  flexFlow: `${props.layoutdirection}`,
   gap: '2rem',
 
   alignItems: 'space-evenly',

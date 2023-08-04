@@ -9,13 +9,13 @@ import {
 } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SendIcon from '@mui/icons-material/Send';
-import Logo from '../../Assets/pitchers.logo.tsx';
 import { SearchComponentProps } from './index.ts';
 import {
   SearchContext,
   TSearchContext,
   DefaultSearchValues,
 } from '../../Contexts/search/index.ts';
+import { PitchersLogo } from '../../Assets/index.ts';
 
 export default function SearchComponent({
   handleSearch,
@@ -49,8 +49,7 @@ export default function SearchComponent({
   return (
     <Card>
       <CardHeader
-        avatar={<Logo size="icon" />}
-        // subheader={}
+        avatar={<PitchersLogo size="icon" />}
         action={
           <IconButton onClick={clearInput}>
             <CancelIcon color="action" fontSize="small" />

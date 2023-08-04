@@ -5,7 +5,6 @@ import Layout from '../../Shared/layout/layout.styles.ts';
 import SearchComponent from '../../Shared/search/search.tsx';
 import { SearchContext } from '../../Contexts/search/index.ts';
 import { HttpClient } from '../../Network/http-client.interface.ts';
-import Loading from '../../Shared/loading.tsx';
 import CardWrapper from './components/cardwrapper.tsx';
 import { API } from '../../Network/api.ts';
 

@@ -4,9 +4,8 @@ import { Card } from '@mui/material';
 import Layout from '../../Shared/layout/layout.styles.ts';
 import SearchComponent from '../../Shared/search/search.tsx';
 import { SearchContext } from '../../Contexts/search/index.ts';
-import { HttpClient } from '../../Network/http-client.interface.ts';
 import CardWrapper from './components/cardwrapper.tsx';
-import { API } from '../../Network/api.ts';
+import { HttpClient, API } from '../../Network/index.ts';
 
 export type Dict<T> = { [k: string]: T };
 

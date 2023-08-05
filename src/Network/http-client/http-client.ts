@@ -1,20 +1,12 @@
 import axios from 'axios';
-import AxiosInstance from '../Libs/axios/axios.config.ts';
+import AxiosInstance from '../../Libs/axios/axios.config.ts';
+import {
+  IHttpClient,
+  PostReqOptions,
+  SearchResponse,
+} from './http-client.types.ts';
 
-export type PostReqOptions = {
-  url?: string;
-};
-
-export type SearchResponse<T> = {
-  values: T;
-};
-
-export interface IHttpClient<T> {
-  // TODO: Change the SearchBodyTyp to a more generic one
-  post(body: SearchBody, options?: PostReqOptions): Promise<T>;
-}
-
-export class HttpClient<M> implements IHttpClient<M> {
+export default class HttpClient<M> implements IHttpClient<M> {
   private httClient: typeof AxiosInstance;
 
   private baseUrl?: string;

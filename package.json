@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
+    "build:local": "tsc && vite build --mode local-prod",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview --host",
+    "preview:local": "vite preview --host --mode local-prod"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

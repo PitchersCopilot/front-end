@@ -1,5 +1,5 @@
 import { lazy, useContext } from 'react';
-import CardTemplate from '../../../Shared/cards/CardTemplate.tsx';
+import CardTemplate from '../../../Shared/Cards/CardTemplate.tsx';
 import { Scrollable } from '../../../Shared/scrollable/scrollable.styled.ts';
 import { TSearchContext } from '../../../Contexts/search/search-context.types.ts';
 import { SearchContext } from '../../../Contexts/search/search-context.context.ts';
@@ -28,9 +28,9 @@ function CardWrapper({ properties, onCardClick }: CardWrapperProps) {
 
   return (
     // Property list
-    <Scrollable rowGap="2rem">
-      {properties?.map((p: Property, index) => (
-        <GrowTransition timeout={index * 800}>
+    <Scrollable rowGap="1.3rem">
+      {properties.map((p: Property, index) => (
+        <GrowTransition timeout={index * 800} key={p.id}>
           <CardTemplate
             key={p.id}
             id={p.id}

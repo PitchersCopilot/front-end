@@ -1,7 +1,7 @@
 import { styled, Card } from '@mui/material';
 
-const Section = styled(Card)({
+const StyledSection = styled(Card)({
   flex: '1',
 });
 
-export default Section;
+export default StyledSection;

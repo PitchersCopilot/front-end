@@ -17,7 +17,14 @@ const CustomRoutes: RouteObject[] = createRoutesFromElements(
       }
     />
     <Route path="/login" element={<Login />} />
-    <Route path="/property/:propertyId" element={<Property />} />
+    <Route
+      path="/property/:propertyId"
+      element={
+        <SearchContextComponent>
+          <Property />
+        </SearchContextComponent>
+      }
+    />
   </>,
 );
 

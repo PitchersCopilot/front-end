@@ -2,7 +2,10 @@ import { useMemo, useState } from 'react';
 import { ISearch, TSearchContext, SearchContext } from './index.ts';
 
 export default function SearchContextComponent({ children }: ParentComponent) {
-  const DefaultSearchState: ISearch = { input: '' };
+  const DefaultSearchState: ISearch = {
+    input: '',
+    loading: false,
+  };
   const [searchContext, setSearchContext] =
     useState<ISearch>(DefaultSearchState);
 

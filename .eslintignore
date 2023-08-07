@@ -1,3 +1,4 @@
 .eslintrc.cjs
 vite.config.ts
 *.types.ts
+tsconfig.json

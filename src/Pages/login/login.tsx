@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../../Assets/logos/logo.tsx';
+import { PitchersLogo } from '../../Assets/index.ts';
 import { LoginData } from './login.types.ts';
 import { StyledForm } from './login.styled.tsx';
 import Layout from '../../Shared/layout/layout.styles.ts';
@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <Layout layoutdirection="row">
       <StyledForm>
-        <CardHeader avatar={<Logo size="large" />} />
+        <CardHeader avatar={<PitchersLogo size="large" />} />
         <CardContent>
           <TextField
             variant="filled"

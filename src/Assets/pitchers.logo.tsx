@@ -7,7 +7,7 @@ export const LogoSizes: SvgSize = {
   icon: { width: 200, height: 30 } as Area,
 };
 
-export default function Logo({ size }: SvgProps) {
+export default function PitchersLogo({ size }: SvgProps) {
   return (
     <svg
       width={LogoSizes[size].width}

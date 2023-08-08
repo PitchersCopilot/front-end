@@ -1,11 +1,5 @@
 import { useCallback, useContext, useState } from 'react';
-import {
-  CardHeader,
-  CardContent,
-  Typography,
-  Card,
-  Stack,
-} from '@mui/material';
+import { CardHeader, CardContent, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/loading.tsx';
 import { Scrollable } from '../../../../Shared/scrollable/scrollable.styled.ts';
@@ -78,7 +72,12 @@ export default function Chat() {
   };
 
   return (
-    <Layout layoutdirection="column" height='100%' sx={{ flex: '1', padding: '0' }}>
+    <Layout
+      layoutdirection="column"
+      disableGutters
+      height="100%"
+      sx={{ flex: '1', padding: '0' }}
+    >
       <Scrollable flex="1" rowGap="1.3rem" sx={{ padding: '0' }}>
         {chatMessages.map((message) => (
           <GrowTransition timeout={message.timeout} key={message.id}>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import AxiosInstance from '../../Libs/axios/axios.config.ts';
-import { IHttpClient, PostReqOptions } from './http-client.types.ts';
+import { PostReqOptions } from './http-client.types.ts';
 
 // export default class HttpClient<REQ_T, RES_T> implements IHttpClient<REQ_T> {
 export default class HttpClient<REQ_T, RES_T> {

@@ -31,7 +31,14 @@ export default function Property() {
           <PitchersLogo size="small" />
         </Box>
       </Stack>
-      <Stack direction={{ lg: 'row', sm: 'column' }} gap="1rem" flex="1">
+      <Stack
+        direction={{ lg: 'row', sm: 'column' }}
+        gap="1rem"
+        flex="1"
+        padding="1rem"
+        maxHeight="95%"
+        paddingBottom="0"
+      >
         <StyledSection>
           <Typography variant="h1">Test</Typography>
         </StyledSection>
@@ -51,10 +58,24 @@ export default function Property() {
               <Chip label="House" size="small" />
             </Stack>
             <Scrollable flex="1" sx={{ padding: '0' }}>
-              {/* TODO: This scrolable component is not working as expected */}
               <Typography padding="0">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
                 eius facilis autem. Eveniet inventore perspiciatis hic. Placeat
+                incidunt ipsum et cupiditate accusamus dolores exercitationem.
+                Iure est iste quibusdam eos cumque? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Laudantium earum sapiente, et
+                error accusamus, inventore explicabo harum culpa doloremque,
+                eveniet excepturi ab. Voluptate veritatis perspiciatis Placeat
+                incidunt ipsum et cupiditate accusamus dolores exercitationem.
+                Iure est iste quibusdam eos cumque? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Laudantium earum sapiente, et
+                error accusamus, inventore explicabo harum culpa doloremque,
+                eveniet excepturi ab. Voluptate veritatis perspiciatis Placeat
+                incidunt ipsum et cupiditate accusamus dolores exercitationem.
+                Iure est iste quibusdam eos cumque? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Laudantium earum sapiente, et
+                error accusamus, inventore explicabo harum culpa doloremque,
+                eveniet excepturi ab. Voluptate veritatis perspiciatis Placeat
                 incidunt ipsum et cupiditate accusamus dolores exercitationem.
                 Iure est iste quibusdam eos cumque? Lorem ipsum dolor sit amet
                 consectetur adipisicing elit. Laudantium earum sapiente, et

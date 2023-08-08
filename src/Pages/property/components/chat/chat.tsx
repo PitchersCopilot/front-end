@@ -1,5 +1,11 @@
 import { useCallback, useContext, useState } from 'react';
-import { CardHeader, CardContent, Typography, Card } from '@mui/material';
+import {
+  CardHeader,
+  CardContent,
+  Typography,
+  Card,
+  Stack,
+} from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Loading from '../../../../Shared/loading.tsx';
 import { Scrollable } from '../../../../Shared/scrollable/scrollable.styled.ts';

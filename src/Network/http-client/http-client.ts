@@ -1,12 +1,9 @@
 import axios from 'axios';
 import AxiosInstance from '../../Libs/axios/axios.config.ts';
-import {
-  IHttpClient,
-  PostReqOptions,
-  SearchResponse,
-} from './http-client.types.ts';
+import { PostReqOptions } from './http-client.types.ts';
 
-export default class HttpClient<M> implements IHttpClient<M> {
+// export default class HttpClient<REQ_T, RES_T> implements IHttpClient<REQ_T> {
+export default class HttpClient<REQ_T, RES_T> {
   private httClient: typeof AxiosInstance;
 
   private baseUrl?: string;
@@ -16,21 +13,12 @@ export default class HttpClient<M> implements IHttpClient<M> {
     this.baseUrl = _baseUrl;
   }
 
-  async post(body: SearchBody, options?: PostReqOptions): Promise<M> {
+  async post(body: REQ_T, options?: PostReqOptions): Promise<RES_T> {
     if (!this.baseUrl && !options)
       throw new Error('You must specify either the url or the base url');
 
-    try {
-      const requestUrl: string | undefined = this.baseUrl || options?.url;
-      const { data } = await this.httClient.post<SearchResponse<M>>(
-        requestUrl!,
-        body,
-      );
-      return data.values;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      throw new Error(error);
-    }
+    const requestUrl: string = `${this.baseUrl || ''}${options?.url || ''}`;
+    const { data } = await this.httClient.post<RES_T>(requestUrl, body);
+    return data;
   }
 }

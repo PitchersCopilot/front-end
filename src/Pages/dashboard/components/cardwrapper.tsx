@@ -1,5 +1,5 @@
 import { lazy, useContext } from 'react';
-import CardTemplate from '../../../Shared/cards/cardtemplate.tsx';
+import CardTemplate from '../../../Shared/cards/CardTemplate.tsx';
 import { Scrollable } from '../../../Shared/scrollable/scrollable.styled.ts';
 import { TSearchContext } from '../../../Contexts/search/search-context.types.ts';
 import { SearchContext } from '../../../Contexts/search/search-context.context.ts';
@@ -28,24 +28,25 @@ function CardWrapper({ properties, onCardClick }: CardWrapperProps) {
 
   return (
     // Property list
-    <Scrollable rowGap="2rem">
-      {properties?.map((p: Property, index) => (
-        <GrowTransition timeout={index * 800}>
+    <Scrollable rowGap="1.3rem">
+      {properties.map((p: Property, index) => (
+        <GrowTransition timeout={index * 800} key={p.id}>
           <CardTemplate
             key={p.id}
             id={p.id}
             onClick={() => onCardClick(p)}
-            image="https://www.bhg.com/thmb/dgy0b4w_W0oUJUxc7M4w3H4AyDo=/1866x0/filters:no_upscale():strip_icc()/living-room-gallery-shelves-l-shaped-couch-ELeyNpyyqpZ8hosOG3EG1X-b5a39646574544e8a75f2961332cd89a.jpg"
-            location="Bogotá, Colombia"
-            address="Calle 168 No 8-40"
+            image={p.image}
+            location={p.location}
+            address={p.address}
             descriptor={p.descriptor.slice(0, 200)}
-            price={123453.0}
-            amenities={{
-              bathrooms: '2 Bathrooms',
-              bedrooms: '3 Bedrooms',
-              meters: '120m',
-            }}
-            yearsAgo="20 years Ago"
+            price={p.price}
+            priceFormated={new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              maximumSignificantDigits: 7,
+            }).format(p.price)}
+            amenities={p.amenities}
+            yearsAgo={p.yearsAgo}
           />
         </GrowTransition>
       ))}

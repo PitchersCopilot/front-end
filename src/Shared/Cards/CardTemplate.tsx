@@ -23,7 +23,7 @@ function CardTemplate({
   location,
   address,
   descriptor,
-  price,
+  priceFormated,
   amenities,
   yearsAgo,
   layoutDirection = 'row',
@@ -68,7 +68,7 @@ function CardTemplate({
         >
           <Chip label={yearsAgo} variant="outlined" />
           <Typography variant="h4" color="secondary">
-            USD {price}
+            USD {priceFormated}
           </Typography>
         </Stack>
       </StyledCard>

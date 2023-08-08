@@ -2,23 +2,17 @@ import { useContext, ChangeEvent } from 'react';
 import {
   IconButton,
   Card,
-  CardHeader,
   CardContent,
   TextField,
   InputAdornment,
 } from '@mui/material';
-import CancelIcon from '@mui/icons-material/Cancel';
 import SendIcon from '@mui/icons-material/Send';
 import { SearchComponentProps } from './index.ts';
-import {
-  SearchContext,
-  TSearchContext,
-  DefaultSearchValues,
-} from '../../Contexts/search/index.ts';
-import { PitchersLogo } from '../../Assets/index.ts';
+import { SearchContext, TSearchContext } from '../../Contexts/search/index.ts';
 
 export default function SearchComponent({
   handleSearch,
+  header,
 }: SearchComponentProps) {
   const { searchContext, setSearchContext } =
     useContext<TSearchContext>(SearchContext);
@@ -42,24 +36,14 @@ export default function SearchComponent({
     await handleSearch();
   };
 
-  const clearInput = () => {
-    setSearchContext(DefaultSearchValues);
-  };
-
   return (
     <Card>
-      <CardHeader
-        avatar={<PitchersLogo size="icon" />}
-        action={
-          <IconButton onClick={clearInput}>
-            <CancelIcon color="action" fontSize="small" />
-          </IconButton>
-        }
-      />
+      {header && header}
       <CardContent>
         <TextField
           fullWidth
           autoFocus
+          disabled={!!searchContext.loading}
           error={!!searchContext.error}
           label={searchContext.error as string}
           variant="filled"
@@ -70,7 +54,10 @@ export default function SearchComponent({
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton onClick={validateInput}>
+                <IconButton
+                  disabled={!!searchContext.loading}
+                  onClick={validateInput}
+                >
                   <SendIcon color="secondary" fontSize="small" />
                 </IconButton>
               </InputAdornment>

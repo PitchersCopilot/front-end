@@ -52,7 +52,7 @@ export default function Dashboard() {
   };
 
   return (
-    <Layout layoutdirection="column" disableGutters>
+    <Layout maxWidth="xl" layoutdirection="column">
       <SearchComponent
         header={
           <CardHeader

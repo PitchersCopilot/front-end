@@ -1,13 +1,18 @@
 /* eslint-disable import/prefer-default-export */
 import { styled, Card } from '@mui/material';
 
-export const StyledCard = styled(Card)({
+export interface CardProps {
+  layoutdirection: 'row' | 'column';
+}
+
+export const StyledCard = styled(Card)(({ layoutdirection }: CardProps) => ({
   display: 'flex',
-  paddingRight: '2rem',
+  flexDirection: `${layoutdirection}`,
+  height: '100%',
   '& .MuiCardContent-root': {
     display: 'flex',
     flexDirection: 'column',
     gap: '0.5rem',
     width: 'auto',
   },
-});
+}));

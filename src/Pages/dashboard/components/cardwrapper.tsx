@@ -1,5 +1,5 @@
 import { lazy, useContext } from 'react';
-import CardTemplate from '../../../Shared/cards/CardTemplate.tsx';
+import CardTemplate from '../../../Shared/cards/cardtemplate.tsx';
 import { Scrollable } from '../../../Shared/scrollable/scrollable.styled.ts';
 import { TSearchContext } from '../../../Contexts/search/search-context.types.ts';
 import { SearchContext } from '../../../Contexts/search/search-context.context.ts';
@@ -39,7 +39,7 @@ function CardWrapper({ properties, onCardClick }: CardWrapperProps) {
             location="Bogotá, Colombia"
             address="Calle 168 No 8-40"
             descriptor={p.descriptor.slice(0, 200)}
-            price={123.0}
+            price={123453.0}
             amenities={{
               bathrooms: '2 Bathrooms',
               bedrooms: '3 Bedrooms',

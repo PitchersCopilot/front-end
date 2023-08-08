@@ -67,6 +67,7 @@ export default function Property() {
             }}
             yearsAgo="20 years Ago"
             layoutDirection="column"
+            pitch=""
           />
         </Section>
         <Section>

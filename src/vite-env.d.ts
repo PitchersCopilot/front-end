@@ -23,4 +23,5 @@ type Property = {
   price: number;
   amenities: Amenity;
   yearsAgo: string;
+  pitch?: string;
 };

@@ -30,16 +30,18 @@ export default function Property() {
     DefaultPropertyRequest,
   );
   const propertyHttpClient = () =>
-    new HttpClient<SearchBody, Property>(API.PROPERTY_API);
+    new HttpClient<string, Property>(API.PROPERTY_API);
 
-  /*   const { data, isLoading, error } = useSWR(API.PROPERTY_API, (url) =>
+  const { data, isLoading, error } = useSWR(API.PROPERTY_API, (url) =>
     propertyHttpClient().get(propertyId, {
       url,
     }),
-  ); */
-  useEffect(() => {
-    propertyHttpClient().get(propertyId).then();
-  }, [propertyId]);
+  );
+  /*   useEffect(() => {
+    propertyHttpClient()
+      .get(propertyId)
+      .then((res) => res.data);
+  }, [propertyId]); */
 
   if (isLoading) return <div>loading...</div>;
   return (

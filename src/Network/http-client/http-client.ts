@@ -3,6 +3,7 @@ import AxiosInstance from '../../Libs/axios/axios.config.ts';
 import { PostReqOptions } from './http-client.types.ts';
 
 // export default class HttpClient<REQ_T, RES_T> implements IHttpClient<REQ_T> {
+
 export default class HttpClient<REQ_T, RES_T> {
   private httClient: typeof AxiosInstance;
 
@@ -19,6 +20,15 @@ export default class HttpClient<REQ_T, RES_T> {
 
     const requestUrl: string = `${this.baseUrl || ''}${options?.url || ''}`;
     const { data } = await this.httClient.post<RES_T>(requestUrl, body);
+    return data;
+  }
+
+  async get(id?: REQ_T, options?: PostReqOptions): Promise<RES_T> {
+    if (!this.baseUrl && !options)
+      throw new Error('You must specify either the url or the base url');
+
+    const requestUrl: string = `${this.baseUrl || ''}${options?.url || ''}`;
+    const { data } = await this.httClient.get<RES_T>(`${requestUrl}${id}`);
     return data;
   }
 }

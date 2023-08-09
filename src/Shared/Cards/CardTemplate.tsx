@@ -28,7 +28,7 @@ function CardTemplate({
   yearsAgo,
   layoutDirection = 'row',
 }: CardTemplateProps) {
-  const { bathrooms, bedrooms, meters } = amenities;
+  const { bathrooms, bedrooms, meters } = amenities[0];
   const priceLayout = layoutDirection === 'column' ? 'row' : 'column';
 
   return (

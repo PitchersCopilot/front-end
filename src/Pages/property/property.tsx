@@ -1,4 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useCallback, useState, useEffect } from 'react';
+import useSWR from 'swr';
 import { Box, Button, Chip, Stack, Typography } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Layout from '../../Shared/layout/layout.styles.ts';
@@ -7,14 +9,42 @@ import { PitchersLogo } from '../../Assets/index.ts';
 import CardTemplate from '../../Shared/cards/CardTemplate.tsx';
 import StyledSection from './components/section.styled.ts';
 import Chat from './components/chat/chat.tsx';
+import { PropertyResponse } from '../dashboard/dashboard.tsx';
+import { HttpClient, API } from '../../Network/index.ts';
 
+export interface PropertyRequest {
+  data: Property;
+  isLoading: boolean;
+  error: string;
+}
+const DefaultPropertyRequest = {
+  data: {} as Property,
+  isLoading: true,
+  error: '',
+};
 export default function Property() {
   const navigation = useNavigate();
   const handleGoBack = () => navigation(-1);
   const { propertyId } = useParams<string>();
+  const [property, setProperty] = useState<PropertyRequest>(
+    DefaultPropertyRequest,
+  );
+  const propertyHttpClient = () =>
+    new HttpClient<SearchBody, Property>(API.PROPERTY_API);
 
+  /*   const { data, isLoading, error } = useSWR(API.PROPERTY_API, (url) =>
+    propertyHttpClient().get(propertyId, {
+      url,
+    }),
+  ); */
+  useEffect(() => {
+    propertyHttpClient().get(propertyId).then();
+  }, [propertyId]);
+
+  if (isLoading) return <div>loading...</div>;
   return (
     // TODO: Extract the header into a separate component
+
     <Layout layoutdirection="column" maxWidth="xl" sx={{ padding: '1rem 0' }}>
       <Stack direction="row" width="100%">
         <Button
@@ -44,18 +74,14 @@ export default function Property() {
           <CardTemplate
             key={propertyId}
             id={1}
-            image="https://www.bhg.com/thmb/dgy0b4w_W0oUJUxc7M4w3H4AyDo=/1866x0/filters:no_upscale():strip_icc()/living-room-gallery-shelves-l-shaped-couch-ELeyNpyyqpZ8hosOG3EG1X-b5a39646574544e8a75f2961332cd89a.jpg"
-            location="Bogotá, Colombia"
-            address="Calle 168 No 8-40"
-            descriptor="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-            price={123456.0}
+            image={data.image}
+            location={data.location}
+            address={data.address}
+            descriptor={'data?.descriptor'}
+            price={'data?.price'}
             priceFormated="132123"
-            amenities={{
-              bathrooms: '2 Bathrooms',
-              bedrooms: '3 Bedrooms',
-              meters: '120m',
-            }}
-            yearsAgo="20 years Ago"
+            amenities={['data?.amenities']}
+            yearsAgo={'data?.yearsAgo'}
             layoutDirection="column"
             pitch=""
           />

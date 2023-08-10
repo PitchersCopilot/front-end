@@ -43,12 +43,12 @@ export default function Dashboard() {
     }
   };
 
-  const handleDetailedProperty = (property: Property) => {
-    navigation(`/property/${property.id}`);
-  };
-
   const clearInput = () => {
     setSearchContext(DefaultSearchValues);
+  };
+  const handleDetailedProperty = (property: Property) => {
+    clearInput();
+    navigation(`/property/${property.id}`);
   };
 
   return (

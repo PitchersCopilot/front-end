@@ -54,7 +54,7 @@ export default function Chat() {
       const { response }: ChatResponse = await chatHttpClient().post(
         searchBody,
         {
-          url: '2c055ae9-8b30-4484-b1b6-283055be1242' || propertyId,
+          url: propertyId,
         },
       );
       const tempChat = [...tempChatMessages.slice(0, -1)].concat([
@@ -62,6 +62,13 @@ export default function Chat() {
       ]);
       setChatMessages(tempChat);
     } catch (error) {
+      const tempChat = [...chatMessages.slice(0, -1)].concat([
+        new Message({
+          message: 'Something went wrong, try again',
+          isResponse: true,
+        }),
+      ]);
+      setChatMessages(tempChat);
       setSearchContext({
         ...DefaultSearchValues,
         error: 'Something went wrong, try again',

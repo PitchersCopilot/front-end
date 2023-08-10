@@ -21,8 +21,7 @@ type Property = {
   address: string;
   descriptor: string;
   price: number;
-  priceFormated: string;
-  amenities: Amenity;
+  amenities: Amenity[];
   yearsAgo: string;
   pitch?: string;
 };

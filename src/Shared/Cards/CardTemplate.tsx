@@ -13,9 +13,9 @@ import {
   Bathtub as BathtubIcon,
   SquareFoot as SquareFootIcon,
 } from '@mui/icons-material';
-import TextLabel from './textlabel.tsx';
-import { CardTemplateProps } from './cards.types.ts';
+import TextLabel from './TextLabel.tsx';
 import { StyledCard } from './card.styled.ts';
+import { CardTemplateProps } from './cards.types.ts';
 
 function CardTemplate({
   onClick,
@@ -23,7 +23,7 @@ function CardTemplate({
   location,
   address,
   descriptor,
-  priceFormated,
+  price,
   amenities,
   yearsAgo,
   layoutDirection = 'row',
@@ -32,7 +32,6 @@ function CardTemplate({
   const priceLayout = layoutDirection === 'column' ? 'row' : 'column';
 
   return (
-    //
     <CardActionArea onClick={onClick} sx={{ height: '100%' }}>
       <StyledCard
         layoutdirection={layoutDirection}
@@ -68,7 +67,12 @@ function CardTemplate({
         >
           <Chip label={yearsAgo} variant="outlined" />
           <Typography variant="h4" color="secondary">
-            USD {priceFormated}
+            USD
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+              maximumSignificantDigits: 7,
+            }).format(price)}
           </Typography>
         </Stack>
       </StyledCard>

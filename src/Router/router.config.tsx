@@ -1,7 +1,7 @@
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import CustomRoutes from './routes.tsx';
 
-const CustomRouter = createHashRouter(CustomRoutes);
+const CustomRouter = createBrowserRouter(CustomRoutes);
 
 export default function Router() {
   return <RouterProvider router={CustomRouter} />;
